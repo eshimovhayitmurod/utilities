@@ -35,10 +35,10 @@ const prettyCardValid = (value = '') => {
 const prettyTinNumber = (value = '') => {
    const isValid = typeof value === 'string' && value;
    const parsedValue = String(value || '');
-   const countryCode = parsedValue.slice(0, 3);
-   const code = parsedValue.slice(3, 6);
-   const first = parsedValue.slice(6, 9);
-   const validValue = `${countryCode} (${code}) ${first}`;
+   const first = parsedValue.slice(0, 3);
+   const second = parsedValue.slice(3, 6);
+   const third = parsedValue.slice(6, 9);
+   const validValue = `${first} (${second}) ${third}`;
    const tinNumber = isValid ? validValue : '—';
    return tinNumber;
 };
